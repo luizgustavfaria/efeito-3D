@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  perspective: 800px;
+}
+
+.game {
+  background-image: url(./img/capa.png);
+  background-size: cover;
+  width: 400px;
+  height: calc(400px * 1.4);
+  transform-style: preserve-3d;
+  transition: 0.3s;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.game::before {
+  content: "";
+  position: absolute;
+  background-image: url(./img/lateral.png);
+  background-size: cover;
+  width: 45px;
+  height: 100%;
+  transform-origin: left;
+  transform: rotateY(-90deg) translate(-100%);
+}
+
+.game:hover {
+  transform: rotateY(45deg) translateY(-45px);
+  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.3);
+}
